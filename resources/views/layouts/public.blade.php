@@ -3,10 +3,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.png" type="image/png">
+	<link rel="icon" href="{{ asset('img/favicon.ico') }}">
 	<title>
         @yield('title')
-    </title>
+	</title>
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ asset('img/favicon/apple-icon-57x57.png') }} ">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/favicon/apple-icon-60x60.png') }} ">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon/apple-icon-72x72.png') }} ">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/favicon/apple-icon-76x76.png') }} ">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/favicon/apple-icon-114x114.png') }} ">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/favicon/apple-icon-120x120.png') }} ">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/favicon/apple-icon-144x144.png') }} ">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/favicon/apple-icon-152x152.png') }} ">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon/apple-icon-180x180.png') }} ">
+	<link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('img/favicon/android-icon-192x192.png') }} ">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon/favicon-32x32.png') }} ">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('img/favicon/favicon-96x96.png') }} ">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon/favicon-16x16.png') }} ">
+	<link rel="manifest" href="{{ asset('img/favicon/manifest.json') }} ">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="{{ asset('img/favicon/ms-icon-144x144.png') }}">
+	<meta name="theme-color" content="#ffffff">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
 	<link rel="stylesheet" href="{{ asset('vendors/linericon/style.css')}}">
@@ -35,10 +53,10 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-                            <li class="nav-item active"><a class="nav-link" href="{{url('/')}}">Inicio</a></li>
-							<li class="nav-item submenu dropdown">
+                            <li class="nav-item active"><a class="nav-link" href="{{url('/')}}">@lang('Public.Menu.Inicio')</a></li>
+							{{--<li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Conocimientos</a>
+								 aria-expanded="false">@lang('Public.Menu.Conocimientos')</a>
 								<ul class="dropdown-menu">
 									<li class="nav-item"><a class="nav-link" href="{{url('/know-tech')}}">Informáticos</a></li>
 									<li class="nav-item"><a class="nav-link" href="{{url('/know-other')}}">Otros</a></li>
@@ -54,13 +72,13 @@
                                     <li class="nav-item"><a class="nav-link" href="{{url('/dev-blog')}}">Blog de Programación</a></li>
 								</ul>
 							</li>
-                            <li class="nav-item"><a class="nav-link" href="{{url('contact')}}">Contácto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('contact')}}">@lang('Public.Menu.Contacto')</a></li>--}}
                             <li class="nav-item submenu dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                    aria-expanded="false">Idioma</a>
+                                    aria-expanded="false">@lang('Public.Menu.Idioma')</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="{{url('/es')}}">Español</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{{url('/en')}}">English</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{url('lang/es')}}">Español</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{url('lang/en')}}">English</a></li>
                                 </ul>
                             </li>
                             
@@ -84,25 +102,20 @@
 							<a href="#">
 								<img src="img/logo.png" width="110px" alt="">
 							</a>
-							<h4>Sígueme</h4>
+							<h4>@lang('Public.Pie.Sigueme')</h4>
 						</div>
 						<div class="footer_social">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-github"></i></a>
+							<a href="https://facebook.com/jappweb" target="_blank"><i class="fa fa-facebook text-primary"></i></a>
+							<a href="https://www.linkedin.com/in/japp1996/" target="_blank"><i class="fa fa-linkedin text-primary"></i></a>
+                            <a href="https://github.com/japp1996" target="_blank"><i class="fa fa-github text-primary"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row footer_bottom justify-content-center">
 				<p class="col-lg-8 col-sm-12 footer-text">
-                    Copyright &copy;
-                    <script type="text/javascript">
-                        document.write(new Date().getFullYear());
-                    </script>
-                    Todos los derechos reservados | Japp</a>
+					@lang('Public.Pie.Copyright')
+					</a>
                 </p>
 			</div>
 		</div>
@@ -129,6 +142,25 @@
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="text/javascript"></script>
+@yield('script')
+<!-- WhatsHelp.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            facebook: "1062552627159817", // Facebook page ID
+            whatsapp: "584124674136", // WhatsApp number
+            call_to_action: '{{ __('Public.Contacto.Escribeme') }}', // Call to action
+            button_color: "#129BF4", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "facebook,whatsapp", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /WhatsHelp.io widget -->
 <script type="text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){
